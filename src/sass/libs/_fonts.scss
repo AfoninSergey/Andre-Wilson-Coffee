@@ -1,0 +1,59 @@
+@font-face {
+    font-family: "Tautz";
+    src: local("Tautz  Regular 2"), local("Tautz-Regular2"),
+        url("../fonts/Tautz-Regular2.woff2") format("woff2"),
+        url("../fonts/Tautz-Regular2.woff") format("woff");
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Tautz";
+    src: local("Tautz  Regular 4"), local("Tautz-Regular4"),
+        url("../fonts/Tautz-Regular4.woff2") format("woff2"),
+        url("../fonts/Tautz-Regular4.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "TTRationalist";
+    src: local("TT Rationalist Medium"), local("TTRationalist-Medium"),
+        url("../fonts/TTRationalist-Medium.woff2") format("woff2"),
+        url("../fonts/TTRationalist-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "TTRationalist";
+    src: local("TT Rationalist Medium Italic"), local("TTRationalist-MediumItalic"),
+        url("../fonts/TTRationalist-MediumItalic.woff2") format("woff2"),
+        url("../fonts/TTRationalist-MediumItalic.woff") format("woff");
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "TTRationalist";
+    src: local("TT Rationalist Light"), local("TTRationalist-Light"),
+        url("../fonts/TTRationalist-Light.woff2") format("woff2"),
+        url("../fonts/TTRationalist-Light.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "TTRationalist";
+    src: local("TT Rationalist Light Italic"), local("TTRationalist-LightItalic"),
+        url("../fonts/TTRationalist-LightItalic.woff2") format("woff2"),
+        url("../fonts/TTRationalist-LightItalic.woff") format("woff");
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}

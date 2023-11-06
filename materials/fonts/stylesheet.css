@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'Tautz  3';
+    src: local('Tautz  Regular 2'), local('Tautz-Regular2'),
+        url('Tautz-Regular2.woff2') format('woff2'),
+        url('Tautz-Regular2.woff') format('woff'),
+        url('Tautz-Regular2.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
