@@ -1,7 +1,10 @@
 
 @import 'libs/_reset'
 @import 'libs/_fonts'
-
+@import 'libs/_slick'
+@import 'libs/_slick-theme'
+@import 'base/_variables'
+@import 'base/_mixins'
 *
     font-family: 'TTRationalist', serif
 h1,h2,h3,h4,h5,h6
@@ -9,16 +12,11 @@ h1,h2,h3,h4,h5,h6
 html
     scroll-behavior: smooth
 
-.three
-    font-weight: 300
-.hun
-    font-weight: 100
-
 .container
-    max-width: 0px
+    max-width: calc(100vw - 300px)
     margin: 0 auto
 
-// @import ''
+@import 'blocks/_promo'
 
 @media ( max-width:  1199px)
     .container
