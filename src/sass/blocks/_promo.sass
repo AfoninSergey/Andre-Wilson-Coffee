@@ -1,24 +1,112 @@
-.promo    
+.promo
     position: relative
     width: 100vw
     height: 100vh
-    padding: 40px 0 90px
+    min-height: 530px
+    padding: 30px 0 90px
+
+    h1
+        display: none
     .container
         height: 100%
         display: flex
         flex-direction: column
+    .navigation
+        position: fixed
+        top: 0
+        width: 100%
+        background-color: rgba(0, 0, 0, .0)
+        transition: .4s
+        z-index: 1
+        ul
+            display: flex
+            width: calc(100vw - 300px)
+            margin: 0 auto
+            padding: 5px 20px
+            justify-content: flex-end
+            align-items: center
+            font-size: 29px
+            font-style: normal
+            font-weight: 400
+            li
+                margin: 0 15px
+                img
+                    width: 50px
+                    height: auto
+                    padding: 0
+                    border-radius: 50%
+                    opacity: 0                   
+                    transition: .5s all
+                    &:hover
+                        transform: scale(1.09)
+                    &:active
+                        transition: .1s
+                        box-shadow: 0 0 10px 0px #fff
+                a
+                    position: relative
+                    display: block
+                    color: #fff
+                    padding: 5px
+                    transition: .5s opacity
+                    &::before, &::after
+                        content: ''
+                        display: block
+                        height: 2px
+                        background-color: $light
+                        position: absolute
+                        transform: scaleX(0)
+                        transition: .5s
+                    &::before
+                        width: calc( 100% - 16px )
+                        right: 8px
+                        top: -3px
+                        transform-origin: right
+                        opacity: 0
+                    &::after
+                        width: 100%
+                        left: 0
+                        bottom: 1px
+                        transform-origin: left
+                        opacity: 0
+                    &:hover
+                        &::before, &::after
+                            transform: scaleX(1)
+                            opacity: .8
+                    &:active
+                        color: $light
+                &:first-child
+                    height: 51px
+                    transform: scaleX(0)
+                    a
+                        padding: 0
+                        &::before, &::after
+                            content: none
+        &_scroll
+            background-color: rgba(0, 0, 0, .75)
+            ul
+                li
+                    &:first-child
+                        transform: scaleX(1)
+                    img
+                        display: block
+                        opacity: 1
+                        transition: .5s all
 
-    h1
-        display: none
-    .main-logo        
-        width: 23%
+    .main-logo
+        width: 21%
         height: auto
+        transition-duration: 2s
+        &:hover
+            transform: scale(1.04)
     .sub-logo
-        width: 67%
+        width: 72%
         height: auto
         margin-left: auto
         margin-top: auto
-        margin-right: 90px
+        margin-right: 75px
+        transition-duration: 2s
+        &:hover
+            transform: scale(1.03)
     &__background
         position: absolute
         z-index: -1
@@ -26,56 +114,21 @@
         left: 0
         width: 100%
         height: 100%
+        min-height: inherit
         background-color: #000000aa
     &__slide
+        width: 100vw
+        height: 100vh
+        min-height: 530px
         &_1
-            width: 100vw
-            height: 100vh
             background: url('../img/bg/001.jpg') center / cover no-repeat #000000aa
         &_2
-            width: 100vw
-            height: 100vh
             background: url('../img/bg/002.jpg') center / cover no-repeat #000000aa
         &_3
-            width: 100vw
-            height: 100vh
             background: url('../img/bg/003.jpg') center / cover no-repeat #000000aa
         &_4
-            width: 100vw
-            height: 100vh
             background: url('../img/bg/004.jpg') center / cover no-repeat #000000aa
 
-        // background-color: #5b2b2b
-    // &__slide
-    //     &_1
-    //         width: 100%
-    //         height: 100%
-    //         background: url('../img/Art/001.jpg') center / cover no-repeat $dark
-    //     &_2
-    //         width: 100%
-    //         height: 100%
-    //         background: url('../img/Art/002.jpg') center / cover no-repeat $dark
-    //     &_3
-    //         width: 100%
-    //         height: 100%
-    //         background: url('../img/Art/003.jpg') center / cover no-repeat $dark
-    //     &_4
-    //         width: 100%
-    //         height: 100%
-    //         background: url('../img/Art/004.jpg') center / cover no-repeat $dark
-    //     &_5
-    //         width: 100%
-    //         height: 100%
-    //         background: url('../img/Art/005.jpg') center / cover no-repeat $dark
-    //     &_6
-    //         width: 100%
-    //         height: 100%
-    //         background: url('../img/Art/006.jpg') center / cover no-repeat $dark
-    //     &_7
-    //         width: 100%
-    //         height: 100%
-    //         background: url('../img/Art/007.jpg') center / cover no-repeat $dark
-    //     &_8
-    //         width: 100%
-    //         height: 100%
-    //         background: url('../img/Art/008.jpg') center / cover no-repeat $dark    
+.test
+    width: 100%
+    height: 1000px
