@@ -5,29 +5,31 @@
 @import 'libs/_slick-theme'
 @import 'base/_variables'
 @import 'base/_mixins'
-*
+html
     font-family: 'TTRationalist', serif
 h1,h2,h3,h4,h5,h6, a
     font-family: 'Tautz', serif
-html
-    scroll-behavior: smooth
+// html
+//     scroll-behavior: smooth
 
 .container
-    width: calc(100vw - 300px)
+    max-width: calc(100vw - 300px)
     margin: 0 auto
 
 @import 'blocks/_promo'
+@import 'blocks/_promo-media'
+@import 'blocks/_about'
+@import 'blocks/_about-media'
 
-// @media ( max-width:  1199px)
-//     .container
-//         max-width: 800px
+@media ( max-width:  1199px)
+    .container
+        max-width: calc(100vw - 200px)
 @media ( max-width:  991px)
     .container
-        max-width: 670px
-@media ( max-width:  767px)
+        max-width: calc(100vw - 100px)
+// @media ( max-width:  767px)
+//     .container
+//         max-width: 480px
+@media ( max-width:  575px) and (orientation: portrait)
     .container
-        max-width: 480px
-@media ( max-width:  575px)
-    .container
-        max-width: 300px
-
+        max-width: calc(100vw - 55px)

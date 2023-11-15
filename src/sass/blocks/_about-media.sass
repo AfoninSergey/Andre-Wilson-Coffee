@@ -1,0 +1,79 @@
+@media ( max-width:  1199px)
+    .about
+        padding: 100px 0 70px
+        h2
+            font-size: 50px
+        &__list
+            margin-top: 0px
+            li
+                margin-top: 25px
+                h3
+                    font-size: 27px
+                div
+                    margin-top: 20px
+                    font-size: 23px
+                    line-height: 120%
+
+@media ( max-width:  991px) and (orientation: landscape) //horisontal
+    .about
+        padding: 80px 0 40px
+        h2
+            font-size: 45px
+        &__list
+            li
+                margin-top: 15px
+                h3
+                    font-size: 25px
+                div
+                    margin-top: 15px
+                    font-size: 19px
+
+@media ( max-width:  991px) and (orientation: portrait) //vertical
+    .about
+        padding: 80px 0 40px
+        h2
+            font-size: 45px
+        &__list
+            li
+                margin-top: 15px
+                h3
+                    font-size: 22px
+                div
+                    margin-top: 15px
+                    font-size: 18px
+@media ( max-width:  767px)
+    .about
+        h2
+            font-size: 35px
+        &__list
+            li
+                h3
+                    font-size: 22px
+                div
+                    font-size: 18px
+
+@media ( max-width:  575px)
+    .about
+        padding: 70px 0 25px
+        h2
+            font-size: 25px
+            &::before
+                position: absolute
+                +ha
+                top: -50px
+            &::after
+                content: none
+        &__list
+            li
+                min-width: 100%
+@media ( max-width:  374px)
+    .about
+        h2
+            font-size: 21px
+            &__list
+                li
+                    h3
+                        font-size: 18px
+                    div                       
+                        font-size: 16px
+                        text-align: start
