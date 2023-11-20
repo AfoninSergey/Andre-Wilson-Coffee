@@ -47,17 +47,12 @@ $(document).ready(function () {
         }
     });
     menuItems.forEach((i) => {
-        i.addEventListener("click", (e) => {
-            // menuItems.forEach((i) => {
-            //     i.classList.remove('active')  //Понял как сделать ссылку активной после нажатия, но не понял, как правильно удалить
-            // })            
-            // e.target.classList.add('active')
+        i.addEventListener("click", (e) => {     
             hamburger.classList.remove("hamburger_active");
             menu.classList.remove("navigation_active");
             if ($(".navigation").hasClass("navigation_scroll") && !hamburger.classList.contains('hamburger_active')
             && !$(".navigation").hasClass("200")
-        ) {
-            // console.log('Yes');
+        ) {           
             $(".navigation").removeClass("navigation_scroll");
         }
         });
@@ -90,6 +85,17 @@ $(document).ready(function () {
 // })
 // });
 
+    // Галлерея
+
+    const galleryItems = document.querySelectorAll('.gallery__item')
+    galleryItems.forEach(popup => popup.addEventListener('click', () => {
+        popup.classList.toggle('active')
+        if (popup.classList.contains('active')) {
+            document.body.style.overflow = 'hidden'
+        } else {
+            document.body.style.overflow = ''
+        }
+    }))
 
 
 });

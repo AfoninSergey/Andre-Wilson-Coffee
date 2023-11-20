@@ -1,20 +1,75 @@
 .gallery
-    padding: 90px 0
-    height: 100vh
+    padding: 90px 0 70px
+    background-color: $light    
     &__content
-        height: 100%
-        width: 100%
-        display: flex
-        flex-wrap: wrap
-        z-index: 1
+        margin-top: 20px       
+        display: grid
+        grid-template-columns: repeat(auto-fit, minmax(20%, 1fr))        
+        grid-auto-flow: dense
     &__item
-        position: relative
-        width: 24%
-        height: 100%
+        position: relative              
+        border: 4px solid #fff       
         overflow: hidden
+        cursor: pointer      
+        img
+            position: absolute            
+            height: 100%
+            width: 100%
+            +a
+            object-fit: cover
+            transition: 1s            
+            &:hover
+                transform: translate(-50%, -50%) scale(1.1)         
+        &_goriz            
+            aspect-ratio: 1280 / 853
+            grid-column: span 2        
+    .last_goriz
+        display: none
     &__imgWrapper
         position: absolute
-        top: 0
-        left: 0
+        +a
         width: 100%
         height: 100%
+        transition: .5s
+    &__item.active
+        position: fixed
+        top: 0
+        left: 0
+        width: 100vw
+        height: 100vh
+        background-color: rgba(0,0,0, .9)
+        border: none
+        z-index: 1
+        .gallery__imgWrapper
+            position: fixed            
+            +a
+            height: calc( 100% - 50px )
+            width: calc( 100% - 50px )
+            z-index: 2
+            img
+                width: auto
+                &:hover
+                    transform: translate(-50%, -50%) scale(1)
+
+        
+
+
+
+
+    // width: 100%
+    //     height: 100%
+    //     width: 100%
+    //     display: flex
+    //     flex-wrap: wrap
+    //     z-index: 1
+    // &__item
+    //     position: relative
+    //     width: 24%
+    //     height: 100%
+    //     overflow: hidden
+    // &__imgWrapper
+    //     position: absolute
+    //     top: 0
+    //     left: 0
+    //     width: 100%
+    //     height: 100%

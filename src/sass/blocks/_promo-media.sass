@@ -77,7 +77,6 @@
                 margin: 0
                 top: 60px
                 background-color: rgba(0, 0, 0, .0)
-
                 transform: translateY(0)
                 li
                     &:first-child
@@ -125,10 +124,12 @@
         .navigation
             ul
                 left: -100%
+                visibility: hidden
                 li
                     margin: 6vh 0 6vh
             &_active
                 ul
+                    visibility: visible
                     left: 0
 
 @media ( max-width:  767px) and (orientation: landscape) //horisontal
@@ -139,10 +140,12 @@
         .navigation
             ul
                 top: 100vh
+                visibility: hidden
                 li
                     margin: 2vh 0 3vh
             &_active
                 ul
+                    visibility: visible
                     top: 60px
         .main-logo
             width: 18%
