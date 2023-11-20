@@ -1,0 +1,37 @@
+h2
+    text-align: center
+    text-transform: uppercase
+    font-size: 55px
+    font-weight: 900
+    position: relative
+    &::before
+        content: url('../img/icons/coffee_beans.svg')
+        position: relative
+        left: -5px
+        top: 5px
+    &::after
+        content: url('../img/icons/coffee_beans_hor.svg')
+        right: -5px
+        position: relative
+        top: 5px
+@media ( max-width:  1199px)
+    h2
+        font-size: 50px
+@media ( max-width:  991px)
+    h2
+        font-size: 45px
+@media ( max-width:  767px)
+    h2
+        font-size: 35px
+@media ( max-width:  575px)
+    h2
+        font-size: 25px
+        &::before
+            position: absolute
+            +ha
+            top: -50px
+        &::after
+            content: none
+@media ( max-width:  374px) 
+    h2
+        font-size: 21px   
