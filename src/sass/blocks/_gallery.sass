@@ -4,7 +4,8 @@
     &__content
         margin-top: 20px       
         display: grid
-        grid-template-columns: repeat(auto-fit, minmax(20%, 1fr))        
+        grid-template-columns: repeat(auto-fit, 20%) 
+        // grid-template-columns: repeat(auto-fit, minmax(200px, 1fr))        
         grid-auto-flow: dense
     &__item
         position: relative              
@@ -20,10 +21,10 @@
             transition: 1s            
             &:hover
                 transform: translate(-50%, -50%) scale(1.1)         
-        &_goriz            
+        &_horiz            
             aspect-ratio: 1280 / 853
             grid-column: span 2        
-    .last_goriz
+    .last_horiz
         display: none
     &__imgWrapper
         position: absolute
@@ -37,7 +38,7 @@
         left: 0
         width: 100vw
         height: 100vh
-        background-color: rgba(0,0,0, .9)
+        background-color: rgba(0,0,0, .95)
         border: none
         z-index: 1
         .gallery__imgWrapper

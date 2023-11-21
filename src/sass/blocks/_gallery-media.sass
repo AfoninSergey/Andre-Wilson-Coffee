@@ -1,0 +1,51 @@
+@media (max-width: 1199px)
+    .gallery
+        padding: 80px 0 60px
+        &__content
+            margin-top: 10px  
+
+// @media ( max-width:  991px) and (orientation: landscape) //horisontal
+@media ( max-width:  899px)
+    .gallery    
+        &__content
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr))
+        .last_horiz
+            display: block
+        .last_vert
+            display: none
+@media ( max-width:  740px)
+    .gallery         
+        .last_horiz
+            display: none
+        .last_vert
+            display: block
+        &__item.active
+            .gallery__imgWrapper
+                height: calc( 100% - 5px )
+                width: calc( 100% - 5px )
+@media ( max-width:  580px)
+    .gallery
+        &__item
+            &_vert
+                aspect-ratio: 900 / 1280      
+        .last_horiz
+            display: block
+        .last_vert
+            display: none
+        
+@media ( max-width:  420px)
+    .gallery
+        &__content
+            grid-template-columns: 100%
+            
+        &__item
+            &_horiz                          
+                aspect-ratio: 4 / 3
+                grid-column: span 1
+            &_vert
+                width: 100%
+                aspect-ratio: 3 / 4
+        .last_horiz
+            display: block
+        .last_vert
+            display: block
