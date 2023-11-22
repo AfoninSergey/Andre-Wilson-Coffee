@@ -1,0 +1,115 @@
+.footer
+    padding: 90px 0 10px
+    background-color: $logo_color
+    color: $light
+    font-weight: 300
+    font-size: 20px
+    h3
+        font-weight: 700
+    &__apps       
+        margin-top: 35px
+        padding: 0 20px
+        display: flex
+        justify-content: space-between
+        line-height: 120%
+        &_descr            
+            width: 50%
+            order: 1
+            ul
+                width: 70%
+                margin: 7px auto 0
+            li
+                padding-left: 20px
+                position: relative
+                font-style: italic
+                span
+                    text-transform: uppercase
+                &::before
+                        content: url('../img/icons/coffee_beans_small_light.svg')                    
+                        position: absolute
+                        display: block
+                        left: 2px
+                        top: 0                        
+        &_google, &_apple
+            display: flex
+            flex-direction: column
+            align-items: center
+            width: 25%
+            img
+                width: 130px
+            a
+                img
+                    transition: .7s
+                    &:hover
+                        transform: scale(1.07)  
+        &_google           
+            order: 0
+        &_apple          
+            order: 2
+    &__phone
+        margin: 35px auto 0
+        // padding: 0 60px     
+        display: grid
+        grid-template-columns: repeat(2, 50%)
+        grid-template-rows: repeat(2, 60px)
+        align-items: center
+        h3
+            text-align: right    
+        &_call            
+            position: relative
+            padding-left: 80px
+            font-weight: 500
+            color: $light
+            cursor: pointer
+            font-size: 25px
+            transition: .3s
+            &::before                
+                content: url('../img/icons/phone_white_icon.png')                    
+                position: absolute
+                display: block
+                height: 45px
+                left: 20px
+                top: -12px            
+            &:hover
+                color: #fff
+                text-shadow: 0 0 3px #fff                                        
+                &::before
+                    animation: drill 6s infinite           
+        &_write
+            display: flex
+            padding-left: 10px            
+            img
+                display: block
+                margin: 0 10px
+                width: 45px
+                height: 45px
+                &:hover
+                    animation: drill 6s infinite
+    &__address
+        margin-top: 35px
+        text-align: center
+        h3
+            text-transform: uppercase
+        address
+            margin-top: 20px
+            font-size: 25px
+            a
+                color: $light
+                position: relative
+                transition: .5s
+                &::before                
+                    content: url('../img/icons/down.png')                    
+                    position: absolute
+                    opacity: .6
+                    top: 35px
+                    +ha
+                    transition: .5s
+                &:hover
+                    color: #fff
+                    text-shadow: 0 0 3px #fff                                                        
+                    &::before
+                        opacity: .8                       
+                        transform: translateX(-50%) scale(1.2)
+
+    &__map
+        margin-top: 40px

@@ -3,6 +3,7 @@
 @import 'libs/_fonts'
 @import 'libs/_slick'
 @import 'libs/_slick-theme'
+@import 'libs/_animations'
 @import 'base/_variables'
 @import 'base/_mixins'
 html
@@ -22,6 +23,7 @@ h1,h2,h3,h4,h5,h6, a
 @import 'blocks/_about-media'
 @import 'blocks/_gallery'
 @import 'blocks/_gallery-media'
+@import 'blocks/_footer'
 
 @media ( max-width:  1199px)
     .container
@@ -35,3 +37,13 @@ h1,h2,h3,h4,h5,h6, a
 @media ( max-width:  575px) and (orientation: portrait)
     .container
         max-width: calc(100vw - 55px)
+
+.copyright
+    background-color: $logo_color
+    padding: 10px 20px 20px    
+    a
+        font-size: 15px
+        color: $light       
+            
+        
+    
