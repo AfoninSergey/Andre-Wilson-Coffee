@@ -4,7 +4,14 @@
         &__content
             margin-top: 10px  
 
-// @media ( max-width:  991px) and (orientation: landscape) //horisontal
+@media ( max-width:  1025px) and (orientation: portrait)//vertical
+    .gallery
+        &__item.active.gallery__item_horiz
+            .gallery__imgWrapper
+                img
+                    width: 100%
+                    height: auto
+
 @media ( max-width:  899px)
     .gallery    
         &__content
