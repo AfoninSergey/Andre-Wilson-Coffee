@@ -17,27 +17,34 @@ $(document).ready(function () {
         hamburger = document.querySelector(".hamburger");
 
     //navigation scroll
-    $(window).scroll(function () {       
+    $(window).scroll(function () {
         if ($(this).scrollTop() > 200) {
             $(".navigation").addClass("200");
         } else {
             $(".navigation").removeClass("200");
         }
-        
-        if ($(this).scrollTop() > 200 && !$(".navigation").hasClass("navigation_scroll")) { // добавил 15.11.2023. Надо убедиться           
-            $(".navigation").addClass("navigation_scroll");      
-        } else if ($(this).scrollTop() < 200 && !hamburger.classList.contains('hamburger_active')) {
-            $(".navigation").removeClass("navigation_scroll");            
+
+        if (
+            $(this).scrollTop() > 200 &&
+            !$(".navigation").hasClass("navigation_scroll")
+        ) {
+            // добавил 15.11.2023. Надо убедиться
+            $(".navigation").addClass("navigation_scroll");
+        } else if (
+            $(this).scrollTop() < 200 &&
+            !hamburger.classList.contains("hamburger_active")
+        ) {
+            $(".navigation").removeClass("navigation_scroll");
         }
-
     });
-
 
     hamburger.addEventListener("click", () => {
         hamburger.classList.toggle("hamburger_active");
         menu.classList.toggle("navigation_active");
-        if ($(".navigation").hasClass("navigation_scroll") && !hamburger.classList.contains('hamburger_active')
-        && !$(".navigation").hasClass("200")
+        if (
+            $(".navigation").hasClass("navigation_scroll") &&
+            !hamburger.classList.contains("hamburger_active") &&
+            !$(".navigation").hasClass("200")
         ) {
             // console.log('Yes');
             $(".navigation").removeClass("navigation_scroll");
@@ -47,55 +54,85 @@ $(document).ready(function () {
         }
     });
     menuItems.forEach((i) => {
-        i.addEventListener("click", (e) => {     
+        i.addEventListener("click", (e) => {
             hamburger.classList.remove("hamburger_active");
             menu.classList.remove("navigation_active");
-            if ($(".navigation").hasClass("navigation_scroll") && !hamburger.classList.contains('hamburger_active')
-            && !$(".navigation").hasClass("200")
-        ) {           
-            $(".navigation").removeClass("navigation_scroll");
-        }
+            if (
+                $(".navigation").hasClass("navigation_scroll") &&
+                !hamburger.classList.contains("hamburger_active") &&
+                !$(".navigation").hasClass("200")
+            ) {
+                $(".navigation").removeClass("navigation_scroll");
+            }
         });
     });
     // Ниже скрипт делает плавный скролл
-    $("a").on('click', function(event) {
+    $("a").on("click", function (event) {
         if (this.hash !== "") {
             event.preventDefault();
             const hash = this.hash;
-            $('html, body').animate({
-                scrollTop: $(hash).offset().top
-            }, 600, function() {
-                window.location.hash = hash;
-            });
+            $("html, body").animate(
+                {
+                    scrollTop: $(hash).offset().top,
+                },
+                600,
+                function () {
+                    window.location.hash = hash;
+                }
+            );
         }
     });
     // Ниже рабочий (кажется) вариант подсветки соответстующей блоку ссылки
-// jQuery(window).scroll(function(){
-//     var $sections = $('section');
-// $sections.each(function(i,el){
-//    var top  = $(el).offset().top-100;
-//    var bottom = top +$(el).height();
-//    var scroll = $(window).scrollTop();
-//    var id = $(el).attr('id');
-//    if( scroll > top && scroll < bottom){
-//        $('a.active').removeClass('active');
-//        $('a[href="#'+id+'"]').addClass('active');
+    // jQuery(window).scroll(function(){
+    //     var $sections = $('section');
+    // $sections.each(function(i,el){
+    //    var top  = $(el).offset().top-100;
+    //    var bottom = top +$(el).height();
+    //    var scroll = $(window).scrollTop();
+    //    var id = $(el).attr('id');
+    //    if( scroll > top && scroll < bottom){
+    //        $('a.active').removeClass('active');
+    //        $('a[href="#'+id+'"]').addClass('active');
 
-//    }
-// })
-// });
+    //    }
+    // })
+    // });
 
     // Галлерея
 
-    const galleryItems = document.querySelectorAll('.gallery__item')
-    galleryItems.forEach(popup => popup.addEventListener('click', () => {
-        popup.classList.toggle('active')
-        if (popup.classList.contains('active')) {
-            document.body.style.overflow = 'hidden'
-        } else {
-            document.body.style.overflow = ''
-        }
-    }))
+    const galleryItems = document.querySelectorAll(".gallery__item");
+    galleryItems.forEach((popup) =>
+        popup.addEventListener("click", () => {
+            popup.classList.toggle("active");
+            if (popup.classList.contains("active")) {
+                document.body.style.overflow = "hidden";
+            } else {
+                document.body.style.overflow = "";
+            }
+        })
+    );
 
+    const coffeMenu = document.querySelector(".menu__items"),
+        prev = document.querySelector(".menu__btn_prev"),
+        next = document.querySelector(".menu__btn_next");
+    let degrees = 0;
 
+    prev.addEventListener('click', () => {
+        console.log('prev')
+        degrees += 60;
+        coffeMenu.style = `transform: perspective(1150px) rotateY(${degrees}deg)`;
+    })
+    next.addEventListener('click', () => {
+        console.log('prev')
+        degrees -= 60;
+        coffeMenu.style = `transform: perspective(1150px) rotateY(${degrees}deg)`;
+    })
+
+    // const coffeMenu = document.querySelector(".menu"),
+    //     coffeMenus = coffeMenu.querySelectorAll(".menu__item");
+
+    //     coffeMenus.forEach((popup) => popup.addEventListener("click", () => {
+    //         popup.classList.toggle("active");
+    //         coffeMenu.classList.toggle("active");
+    //     }));
 });
