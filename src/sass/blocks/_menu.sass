@@ -2,6 +2,8 @@
     padding: 70px 0 10px
     background-color: $logo_color
     min-height: 500px
+    .container
+        display: flex
     &__item        
         margin: 0 auto 10px
         padding: 25px 20px 20px
@@ -22,6 +24,8 @@
         &_iced-coffee
             background: url('../img/logo/Alt_logo_without_fillin.svg') no-repeat center/90% $light
         &_alternative
+            background: url('../img/logo/Alt_logo_without_fillin.svg') no-repeat center/90% $light
+        &_alt-cocoa
             background: url('../img/logo/Alt_logo_without_fillin.svg') no-repeat center/90% $light
     &__subheader
         display: flex
@@ -57,7 +61,10 @@
                     border: 3px solid transparent                  
                     &:first-child
                         &::after
-                            content: none     
+                            content: none
+                .cocoa
+                    font-size: 23px
+
         td
             position: relative
             overflow: hidden
@@ -76,7 +83,7 @@
                     content: "......................................................................"
                     position: absolute
         .footnote
-            font-size: 17px
+            font-size: 16px
             &::after
                 content: none !important 
     &__smile
