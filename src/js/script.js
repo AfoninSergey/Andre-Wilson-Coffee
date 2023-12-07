@@ -75,7 +75,7 @@ $(document).ready(function () {
                 {
                     scrollTop: $(hash).offset().top,
                 },
-                600,
+                400,
                 function () {
                     window.location.hash = hash;
                 }
@@ -83,20 +83,19 @@ $(document).ready(function () {
         }
     });
     // Ниже рабочий (кажется) вариант подсветки соответстующей блоку ссылки
-    // jQuery(window).scroll(function(){
-    //     var $sections = $('section');
-    // $sections.each(function(i,el){
-    //    var top  = $(el).offset().top-100;
-    //    var bottom = top +$(el).height();
-    //    var scroll = $(window).scrollTop();
-    //    var id = $(el).attr('id');
-    //    if( scroll > top && scroll < bottom){
-    //        $('a.active').removeClass('active');
-    //        $('a[href="#'+id+'"]').addClass('active');
-
-    //    }
-    // })
-    // });
+    jQuery(window).scroll(function(){
+        const $sections = $('section');
+        $sections.each(function(i,el){
+            const top  = $(el).offset().top-100;
+            const bottom = top +$(el).height();
+            const scroll = $(window).scrollTop();
+            const id = $(el).attr('id');
+            if( scroll > top && scroll < bottom){
+                $('a.active').removeClass('active');
+                $('a[href="#'+id+'"]').addClass('active');
+            }
+        })
+    });
 
     // Галлерея
 
@@ -115,17 +114,27 @@ $(document).ready(function () {
     const coffeMenu = document.querySelector(".menu__items"),
         prev = document.querySelector(".menu__btn_prev"),
         next = document.querySelector(".menu__btn_next");
-    let degrees = 0;
+    let degrees = 0,
+        persp = 1150;
 
     prev.addEventListener('click', () => {
-        console.log('prev')
+        console.log(document.documentElement.clientWidth)
         degrees += 60;
-        coffeMenu.style = `transform: perspective(1150px) rotateY(${degrees}deg)`;
+        if (document.documentElement.clientWidth > 576 && document.documentElement.clientWidth <= 767) {
+            persp = 1000; 
+        } else if (document.documentElement.clientWidth <= 576) {
+            persp = 5000;
+        }
+        coffeMenu.style = `transform: perspective(${persp}px) rotateY(${degrees}deg)`;        
     })
     next.addEventListener('click', () => {
-        console.log('prev')
+        if (document.documentElement.clientWidth > 576 && document.documentElement.clientWidth <= 767) {
+            persp = 1000; 
+        } else if (document.documentElement.clientWidth <= 576) {
+            persp = 5000;
+        }
         degrees -= 60;
-        coffeMenu.style = `transform: perspective(1150px) rotateY(${degrees}deg)`;
+        coffeMenu.style = `transform: perspective(${persp}px) rotateY(${degrees}deg)`;        
     })
 
     // const coffeMenu = document.querySelector(".menu"),

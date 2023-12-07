@@ -1,8 +1,7 @@
 .menu
     position: relative
     padding: 70px 0 10px
-    background-color: $logo_color
-    // min-height: 100vh    
+    background-color: $logo_color      
     overflow: hidden
     .container
         display: flex
@@ -15,7 +14,7 @@
         height: 350px
         transform-style: preserve-3d
         transition: 1.5s
-        transform: perspective(1150px) rotateY(0deg)
+        transform: perspective(1150px) rotateY(0deg) 
     &__item     
         padding: 15px 10px 10px
         position: absolute
@@ -28,19 +27,21 @@
         transform-style: preserve-3d
         transform: rotateY(calc(var(--i) * 60deg)) translateZ(420px)
         user-select: none
-        -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, #0002)           
+        // -webkit-box-reflect: below 0px linear-gradient(transparent, transparent, #0002)
+        // box-shadow: 0px 50px 30px 5px #000
+        box-shadow: 50px 20px 40px 0px #000, -50px 20px 40px 0px #000        
         &_classic-coffee
-            background: url('../img/logo/Alt_logo_without_fillin.svg') no-repeat center/90%, url('../img/bg/04.jpg') no-repeat center/cover  $light
+            background: url('../img/logo/Alt_logo_without_fillin.svg') no-repeat center/90%, url('../img/bg/classic-coffee.jpg') no-repeat center/cover  $light
         &_seasonal-drinks
-            background: url('../img/logo/Alt_logo_without_fillin.svg') no-repeat center/90% $light
+            background: url('../img/logo/Alt_logo_without_fillin.svg') no-repeat center/90%, url('../img/bg/seasonal-drinks.jpg') no-repeat center/cover  $light
         &_lemonades
-            background: url('../img/logo/Alt_logo_without_fillin.svg') no-repeat center/90% $light
+            background: url('../img/logo/Alt_logo_without_fillin.svg') no-repeat center/90%, url('../img/bg/lemonades.jpg') no-repeat center/cover  $light
         &_iced-coffee
-            background: url('../img/logo/Alt_logo_without_fillin.svg') no-repeat center/90% $light
+            background: url('../img/logo/Alt_logo_without_fillin.svg') no-repeat center/90%, url('../img/bg/iced-coffee.jpg') no-repeat center/cover  $light
         &_alternative
-            background: url('../img/logo/Alt_logo_without_fillin.svg') no-repeat center/90% $light
+            background: url('../img/logo/Alt_logo_without_fillin.svg') no-repeat center/90%, url('../img/bg/alt-cocoa.jpg') no-repeat center/cover  $light
         &_alt-cocoa
-            background: url('../img/logo/Alt_logo_without_fillin.svg') no-repeat center/90% $light            
+            background: url('../img/logo/Alt_logo_without_fillin.svg') no-repeat center/90%, url('../img/bg/alt-coffee.jpg') no-repeat center/cover  $light          
         
     &__subheader
         display: flex
@@ -52,7 +53,7 @@
             text-transform: uppercase
             text-align: center            
             font-size: 25px
-            letter-spacing: -0.13rem
+            letter-spacing: -0.10rem
             transform: scaleY(1.35)
             span
                 font-weight: 700
@@ -64,7 +65,7 @@
         width: 100%
         margin-top: 5px        
         tr              
-            &:first-child
+            &:first-child            
                 color: #fff
                 text-transform: uppercase
                 background-color: #000                
@@ -99,7 +100,10 @@
         .footnote           
             font-size: 9px
             &::after
-                content: none !important 
+                content: none !important
+            &_syrup
+                text-align: justify !important
+                padding: 0 10px
     &__smile
         position: relative
         img        
@@ -114,6 +118,7 @@
         display: flex
         justify-content: space-between
     &__btn
+        -webkit-tap-highlight-color: transparent
         position: relative
         width: 60px
         height: 60px
@@ -138,7 +143,8 @@
             &::before 
                 transform: translate(-60%, -50%) rotate(135deg)       
         &:active
-            background-color: #fff         
+            background-color: #fff
+            color: #20160018        
 
 
 
