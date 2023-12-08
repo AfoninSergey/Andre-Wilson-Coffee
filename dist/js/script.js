@@ -117,25 +117,58 @@ $(document).ready(function () {
     let degrees = 0,
         persp = 1150;
 
+    function turnMenu(num) {
+        // console.log(document.documentElement.clientWidth)
+        degrees += num;
+        if (document.documentElement.clientWidth > 576 && document.documentElement.clientWidth <= 767) {
+            persp = 1000; 
+        } else if (document.documentElement.clientWidth <= 576) {
+            persp = 5000;
+        }
+        coffeMenu.style = `transform: perspective(${persp}px) rotateY(${degrees}deg)`;
+    }
+    // window.addEventListener('orientationchange', () => { 
+    //     // alert(1)
+
+    //     turnMenu();        
+    // });
     prev.addEventListener('click', () => {
-        console.log(document.documentElement.clientWidth)
-        degrees += 60;
-        if (document.documentElement.clientWidth > 576 && document.documentElement.clientWidth <= 767) {
-            persp = 1000; 
-        } else if (document.documentElement.clientWidth <= 576) {
-            persp = 5000;
-        }
-        coffeMenu.style = `transform: perspective(${persp}px) rotateY(${degrees}deg)`;        
-    })
+        turnMenu(60);
+    });
     next.addEventListener('click', () => {
-        if (document.documentElement.clientWidth > 576 && document.documentElement.clientWidth <= 767) {
-            persp = 1000; 
-        } else if (document.documentElement.clientWidth <= 576) {
-            persp = 5000;
-        }
-        degrees -= 60;
-        coffeMenu.style = `transform: perspective(${persp}px) rotateY(${degrees}deg)`;        
-    })
+        turnMenu(-60);
+    }); 
+
+
+
+
+
+    // prev.addEventListener('click', () => {
+    //     // console.log(document.documentElement.clientWidth)
+    //     degrees += 60;
+    //     if (document.documentElement.clientWidth > 576 && document.documentElement.clientWidth <= 767) {
+    //         persp = 1000; 
+    //     } else if (document.documentElement.clientWidth <= 576) {
+    //         persp = 5000;
+    //     }
+    //     coffeMenu.style = `transform: perspective(${persp}px) rotateY(${degrees}deg)`;        
+    // })
+    // next.addEventListener('click', () => {
+    //     if (document.documentElement.clientWidth > 576 && document.documentElement.clientWidth <= 767) {
+    //         persp = 1000; 
+    //     } else if (document.documentElement.clientWidth <= 576) {
+    //         persp = 5000;
+    //     }
+    //     degrees -= 60;
+    //     coffeMenu.style = `transform: perspective(${persp}px) rotateY(${degrees}deg)`;        
+    // })
+
+
+
+
+
+
+
 
     // const coffeMenu = document.querySelector(".menu"),
     //     coffeMenus = coffeMenu.querySelectorAll(".menu__item");

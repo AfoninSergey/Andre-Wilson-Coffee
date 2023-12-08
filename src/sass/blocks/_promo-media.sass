@@ -13,6 +13,7 @@
             width: 80%
 @media ( max-width:  991px) and (orientation: landscape) //horisontal
     .promo
+        padding: 35px 0 10vh
         min-height: 320px
         .navigation
             ul
@@ -44,7 +45,7 @@
             margin-right: 50px
 
 @media ( max-width:  767px)
-    .promo
+    .promo        
         .navigation
             .hidden
                 display: block
@@ -70,6 +71,7 @@
                         box-shadow: 0 0 10px 0px #fff
             ul
                 position: absolute
+                z-index: -1
                 width: 100vw
                 height: calc( 100vh - 60px)
                 flex-direction: column
@@ -121,6 +123,7 @@
 
 @media ( max-width:  767px) and (orientation: portrait) //vertical
     .promo
+        padding: 50px 0 95px
         .navigation
             ul
                 left: -100%
@@ -133,20 +136,22 @@
                     left: 0
 
 @media ( max-width:  767px) and (orientation: landscape) //horisontal
-    .promo
+    .promo        
         // min-height: 1px
-        padding: 20px 0
+        padding: 20px 0 11vh
         max-height: 100%
         .navigation
+            height: 30px
             ul
                 top: 100vh
+                height: calc( 100vh - 30px)
                 visibility: hidden
                 li
                     margin: 2vh 0 3vh
             &_active
                 ul
                     visibility: visible
-                    top: 60px
+                    top: 30px
         .main-logo
             width: 18%
         .sub-logo
@@ -158,6 +163,7 @@
             margin: 0 auto
         .sub-logo
             margin-top: auto
+
 @media ( max-height:  667px) and (orientation: portrait) //vertical
     .promo
         padding: 50px 0 90px
