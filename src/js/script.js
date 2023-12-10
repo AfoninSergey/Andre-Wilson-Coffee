@@ -119,19 +119,23 @@ $(document).ready(function () {
 
     function turnMenu(num) {
         // console.log(document.documentElement.clientWidth)
-        degrees += num;
+        if (num) {
+            degrees += num;
+        }
         if (document.documentElement.clientWidth > 576 && document.documentElement.clientWidth <= 767) {
             persp = 1000; 
         } else if (document.documentElement.clientWidth <= 576) {
             persp = 5000;
+        } else {
+            persp = 1150;
         }
         coffeMenu.style = `transform: perspective(${persp}px) rotateY(${degrees}deg)`;
     }
-    // window.addEventListener('orientationchange', () => { 
-    //     // alert(1)
-
-    //     turnMenu();        
-    // });
+    window.addEventListener('orientationchange', () => {        
+        setTimeout(() => {
+            turnMenu();    
+        }, 500);               
+    });
     prev.addEventListener('click', () => {
         turnMenu(60);
     });
