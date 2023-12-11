@@ -82,7 +82,7 @@ $(document).ready(function () {
             );
         }
     });
-    // Ниже рабочий (кажется) вариант подсветки соответстующей блоку ссылки
+    // Ниже рабочий вариант подсветки соответстующей блоку ссылки
     jQuery(window).scroll(function(){
         const $sections = $('section');
         $sections.each(function(i,el){

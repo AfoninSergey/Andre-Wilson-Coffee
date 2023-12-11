@@ -33,6 +33,7 @@
                         left: 2px
                         top: 0                        
         &_google, &_apple
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
             display: flex
             flex-direction: column
             align-items: center
@@ -40,7 +41,8 @@
             img
                 width: 130px
             a
-                img
+                
+                img                    
                     transition: .7s
                     &:hover
                         transform: scale(1.07)  
@@ -56,7 +58,8 @@
         align-items: center
         h3
             text-align: right    
-        &_call            
+        &_call
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0)           
             position: relative
             padding-left: 80px
             font-weight: 500
@@ -78,7 +81,8 @@
                     animation: drill 6s infinite           
         &_write
             display: flex
-            padding-left: 10px            
+            padding-left: 10px
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0)            
             img
                 display: block
                 margin: 0 10px
@@ -89,6 +93,7 @@
     &__address
         margin-top: 35px
         text-align: center
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0) 
         h3
             text-transform: uppercase
         address
