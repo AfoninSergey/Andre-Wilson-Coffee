@@ -30,8 +30,12 @@
             .gallery__imgWrapper
                 height: calc( 100% - 5px )
                 width: calc( 100% - 5px )
+@media ( max-width:  767px) and (orientation: landscape) //horisontal
+    .gallery
+        padding-top: 40px
 @media ( max-width:  580px)
     .gallery
+        padding-top: 75px
         &__item
             &_vert
                 aspect-ratio: 900 / 1280      

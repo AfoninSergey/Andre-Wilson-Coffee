@@ -139,8 +139,15 @@ document.addEventListener('DOMContentLoaded', () => {
         coffeMenu.style = `transform: perspective(${persp}px) rotateY(${degrees}deg)`;
     }
     window.addEventListener('orientationchange', () => {
-        // console.log('orientationchange')           
-        setTimeout(() => {
+        // console.log('orientationchange');
+        const activeLink = document.querySelector('.navigation ul a.active').dataset.link;
+        const elem = document.querySelector(`#${activeLink}`);
+        // console.log(elem);        
+        setTimeout(() => {        
+            elem.scrollIntoView();  
+        }, 50);  
+                
+        setTimeout(() => {            
             turnMenu();    
         }, 500);               
     });
