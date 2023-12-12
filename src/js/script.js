@@ -1,4 +1,5 @@
-$(document).ready(function () {
+document.addEventListener('DOMContentLoaded', () => {
+
     //background slider
     $(".promo__background").slick({
         arrows: false,
@@ -17,7 +18,7 @@ $(document).ready(function () {
         hamburger = document.querySelector(".hamburger");
 
     //navigation scroll
-    $(window).scroll(function () {
+    function navScroll() {       
         if ($(this).scrollTop() > 200) {
             $(".navigation").addClass("200");
         } else {
@@ -36,7 +37,9 @@ $(document).ready(function () {
         ) {
             $(".navigation").removeClass("navigation_scroll");
         }
-    });
+    }
+    navScroll();
+    $(window).scroll(navScroll);
 
     hamburger.addEventListener("click", () => {
         hamburger.classList.toggle("hamburger_active");
@@ -97,6 +100,8 @@ $(document).ready(function () {
         })
     });
 
+    
+
     // Галлерея
 
     const galleryItems = document.querySelectorAll(".gallery__item");
@@ -115,7 +120,9 @@ $(document).ready(function () {
         prev = document.querySelector(".menu__btn_prev"),
         next = document.querySelector(".menu__btn_next");
     let degrees = 0,
-        persp = 1150;
+        persp = 1150,
+        x1 = null,
+        y1 = null;
 
     function turnMenu(num) {
         // console.log(document.documentElement.clientWidth)
@@ -131,7 +138,8 @@ $(document).ready(function () {
         }
         coffeMenu.style = `transform: perspective(${persp}px) rotateY(${degrees}deg)`;
     }
-    window.addEventListener('orientationchange', () => {        
+    window.addEventListener('orientationchange', () => {
+        // console.log('orientationchange')           
         setTimeout(() => {
             turnMenu();    
         }, 500);               
@@ -143,8 +151,37 @@ $(document).ready(function () {
         turnMenu(-60);
     }); 
 
+    coffeMenu.addEventListener('touchstart', (e) => {        
+        x1 = e.touches[0].clientX;
+        y1 = e.touches[0].clientY;
+    });
+    coffeMenu.addEventListener('touchmove', (e) => {
+        if (!x1 || !y1) {
+            return false;
+        }
+        let x2 = e.touches[0].clientX,
+            y2 = e.touches[0].clientY;
 
-
+        let xDiff = x2 - x1,
+            yDiff = y2 - y1;
+        
+        if (Math.abs(xDiff) > Math.abs(yDiff)) {
+            console.log('horiz');
+            if(xDiff > 0) {
+                turnMenu(60); 
+            } else {
+                turnMenu(-60);
+            }
+        } 
+        x1 = null;
+        y1 = null;
+    });
+    // coffeMenu.addEventListener('touchend', (e) => {
+    //     console.log('end');
+    //     x1 = null;
+    //     y1 = null;
+    // })
+    
 
 
     // prev.addEventListener('click', () => {
