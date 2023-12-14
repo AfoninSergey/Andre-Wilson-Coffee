@@ -1,70 +1,122 @@
 @media ( max-width:  992px)
     .menu
         .container
-            padding-top: 70px
-            min-height: 560px
+            margin-top: -105px          
+            min-height: 600px            
+            height: 600px
         &__item
-            transform: rotateY(calc(var(--i) * 60deg)) translateZ(300px)
+            transform: rotateY(calc(var(--i) * 60deg)) translateZ(600px)
 @media ( max-width:  992px) and (orientation: landscape)
     .menu
         &__btns
             width: 530px
             bottom: 250px
-        &__btn
-            background-color: rgba(0, 0, 0, .6)
+@media ( max-width:  992px) and (orientation: portrait) //vertical
+    .menu
+        .container                    
+            min-height: 640px            
+            height: 640px
+        &__btns            
+            bottom: 20px
+            
 
 @media ( max-width:  767px)
     .menu
         padding-top: 65px
-        .container
-            padding-top: 65px
+        padding-bottom: 30px
+        .container            
             min-height: 490px
-        &__items
-            transform: perspective(1000px) rotateY(0deg)
-        &__item
-            // box-shadow: 0px 50px 30px 5px #000
-            transform: rotateY(calc(var(--i) * 60deg)) translateZ(250px)
-        &__btns
-            width: 530px
-            bottom: 210px
-        &__btn
-            background-color: rgba(0, 0, 0, .6)
-@media ( max-width:  767px) and (orientation: landscape) //horisontal
-    .menu
-        padding-top: 40px
-@media ( max-width:  576px)
-    .menu
-        .container
-            padding-top: 15px
         &__subheader
             h3
-                font-size: 23px
+                font-size: 46px
         &__items
-            transform: perspective(5000px) rotateY(0deg)
-        // &__item
-        //     box-shadow: 0px 50px 30px 5px #000
-@media ( max-width:  576px) and (orientation: portrait) //vertical
-    .menu
-        .container
-            // padding-top: 65px
-            min-height: 450px
+            transform: scale(.5) perspective(2000px) rotateY(0deg)
+        &__item
+            // box-shadow: 0px 50px 30px 5px #000
+            transform: rotateY(calc(var(--i) * 60deg)) translateZ(500px)
         &__block
             tr
                 &:first-child
                     td
-                        font-size: 12px
+                        font-size: 24px
                     .alt                
-                        font-size: 12px
+                        font-size: 24px
                         span                                          
-                            font-size: 9px
+                            font-size: 18px
                         
             td
-                font-size: 12px
+                font-size: 24px
                 span
-                    font-size: 9px
+                    font-size: 18px
             .footnote
                 &_syrup 
-                    font-size: 8px
+                    font-size: 16px
+        &__btns          
+            bottom: 240px
+
+
+
+@media ( max-width:  767px) and (orientation: landscape) //horisontal
+    .menu
+        padding-top: 30px
+
+@media ( max-width:  576px)
+    .menu
+        padding-top: 55px
+        .container
+            margin-top: -150px
+            min-height: 550px            
+            height: 550px
+
+        &__subheader
+            h3
+                font-size: 48px
+        &__items
+
+            transform: scale(.5) perspective(10000px) rotateY(0deg)
+        &__block
+            tr
+                &:first-child
+                    td
+                        font-size: 20px
+                    .alt                
+                        font-size: 20px
+                        span                                          
+                            font-size: 16px
+                        
+            td
+                font-size: 20px
+                line-height: 146% 
+                span
+                    font-size: 16px
+            .footnote
+                &_syrup 
+                    font-size: 16px       
+@media ( max-width:  576px) and (orientation: portrait) //vertical
+    .menu
+        padding-top: 75px
+        .container
+            // padding-top: 65px
+            min-height: 580px
+            height: 580px
+        &__block
+            tr
+                &:first-child
+                    td
+                        font-size: 24px
+                    .alt                
+                        font-size: 24px
+                        span                                          
+                            font-size: 18px
+                        
+            td
+                font-size: 24px
+                line-height: 120% 
+                span
+                    font-size: 18px
+            .footnote
+                &_syrup 
+                    font-size: 16px
         &__btns
             bottom: 15px
             width: 175px
@@ -79,4 +131,4 @@
     .menu
         &__btns
             width: 460px
-            bottom: 260px             
+            bottom: 230px             

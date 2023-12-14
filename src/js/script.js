@@ -120,24 +120,24 @@ document.addEventListener('DOMContentLoaded', () => {
         prev = document.querySelector(".menu__btn_prev"),
         next = document.querySelector(".menu__btn_next");
     let degrees = 0,
-        persp = 1150,
+        persp = 2300,
         x1 = null,
         y1 = null;
 
-    function turnMenu(num) {
-        // console.log(document.documentElement.clientWidth)
+    function turnMenu(num) {       
         if (num) {
             degrees += num;
         }
         if (document.documentElement.clientWidth > 576 && document.documentElement.clientWidth <= 767) {
-            persp = 1000; 
+            persp = 2000; 
         } else if (document.documentElement.clientWidth <= 576) {
-            persp = 5000;
+            persp = 10000;
         } else {
-            persp = 1150;
+            persp = 2300;
         }
-        coffeMenu.style = `transform: perspective(${persp}px) rotateY(${degrees}deg)`;
+        coffeMenu.style = `transform: scale(.5) perspective(${persp}px) rotateY(${degrees}deg)`;
     }
+    turnMenu(-60);
     window.addEventListener('orientationchange', () => {
         // console.log('orientationchange');
         const activeLink = document.querySelector('.navigation ul a.active').dataset.link;
@@ -156,7 +156,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     next.addEventListener('click', () => {
         turnMenu(-60);
-    }); 
+    });
+
+
 
     coffeMenu.addEventListener('touchstart', (e) => {        
         x1 = e.touches[0].clientX;
@@ -183,46 +185,5 @@ document.addEventListener('DOMContentLoaded', () => {
         x1 = null;
         y1 = null;
     });
-    // coffeMenu.addEventListener('touchend', (e) => {
-    //     console.log('end');
-    //     x1 = null;
-    //     y1 = null;
-    // })
-    
 
-
-    // prev.addEventListener('click', () => {
-    //     // console.log(document.documentElement.clientWidth)
-    //     degrees += 60;
-    //     if (document.documentElement.clientWidth > 576 && document.documentElement.clientWidth <= 767) {
-    //         persp = 1000; 
-    //     } else if (document.documentElement.clientWidth <= 576) {
-    //         persp = 5000;
-    //     }
-    //     coffeMenu.style = `transform: perspective(${persp}px) rotateY(${degrees}deg)`;        
-    // })
-    // next.addEventListener('click', () => {
-    //     if (document.documentElement.clientWidth > 576 && document.documentElement.clientWidth <= 767) {
-    //         persp = 1000; 
-    //     } else if (document.documentElement.clientWidth <= 576) {
-    //         persp = 5000;
-    //     }
-    //     degrees -= 60;
-    //     coffeMenu.style = `transform: perspective(${persp}px) rotateY(${degrees}deg)`;        
-    // })
-
-
-
-
-
-
-
-
-    // const coffeMenu = document.querySelector(".menu"),
-    //     coffeMenus = coffeMenu.querySelectorAll(".menu__item");
-
-    //     coffeMenus.forEach((popup) => popup.addEventListener("click", () => {
-    //         popup.classList.toggle("active");
-    //         coffeMenu.classList.toggle("active");
-    //     }));
 });

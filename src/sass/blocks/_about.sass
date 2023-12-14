@@ -1,12 +1,24 @@
 .about
+    position: relative
     padding: 110px 0 90px
-    // background-image: url('../img/logo/Alt_logo_without_fillin.svg')
-    background-image: url('../img/logo/Alt_logo_without_fillin_2.svg')
-    background-repeat: no-repeat
-    background-attachment: fixed   
-    background-size: 90%
-    background-position: 50% 70%
-    background-color: $light
+    overflow: hidden
+    &::before
+        content: ''
+        position: absolute
+        background-image: url('../img/logo/Alt_logo_without_fillin_2.svg')
+        background-repeat: no-repeat        
+        background-size: 90%
+        background-position: 50% 70%
+        position: fixed
+        height: 100vh
+        width: 100vw
+        left: 0
+        top: 0
+        bottom: 0
+        right: 0
+        will-change: transform
+        z-index: -2
+        background-color: $light
     &__list
         margin-top: 20px
         display: flex
